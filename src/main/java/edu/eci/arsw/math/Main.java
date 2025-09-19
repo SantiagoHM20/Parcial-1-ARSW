@@ -16,13 +16,10 @@ public class Main {
     public static void main(String a[]) {
 
         CountingThread thread = new CountingThread();
-        thread.start();
-
-
-
 
         System.out.println(bytesToHex(PiDigits.getDigits(0, 10, 1)));
         System.out.println(bytesToHex(PiDigits.getDigits(1, 100, 1)));
+        thread.start();
     }
 
     private final static char[] hexArray = "0123456789ABCDEF".toCharArray();

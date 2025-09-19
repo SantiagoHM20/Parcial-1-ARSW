@@ -12,6 +12,8 @@ public class CountingThread extends Thread{
 
     public int numThreads = 5;
 
+    public byte[] listB;
+
     public CopyOnWriteArrayList list = new CopyOnWriteArrayList();
 
     @Override
@@ -39,15 +41,19 @@ public class CountingThread extends Thread{
 
 
             }
-
             for(int i = 0; i < list.size(); i++){
-                digits[i] = (byte) list.get(i);
+                listB[i] = (byte) list.get(i);
             }
 
             System.out.printf("%d", list.size());
 
         }
     }
+
+    public byte[] listBytes() {
+        return listB;
+    }
+
 
 }
 
